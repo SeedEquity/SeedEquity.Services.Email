@@ -1,9 +1,10 @@
 SeedEquity.Services.Email
 ============
 
-A utility lib to switch between a debug email service and SMTP Email service
+A DI oriented utility lib to switch between a debug email service and SMTP Email service
 
-The idea here is that in dev environments, you can dump emails to debug consoles
+The idea here is that in dev environments, you can dump emails to the debug console.  This is nicer than the "pickup directory" option in web.config which takes you out of VS.
+
 
 In Production, you would use System.Net web.config
 
@@ -19,3 +20,7 @@ Also, a Ninject Binding exists:
                       kernel.Load(EmailModule.SmtpService());
           #endif 
         }
+
+##Nuget
+
+`Install-Package SeedEquity.Services.Email.Ninject`
